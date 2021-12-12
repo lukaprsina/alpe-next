@@ -31,6 +31,16 @@ const Home: NextPage = () => {
     { ime: "Piz Bernina", visina: "4049 m", skupina: "Zahodne Retijske Alpe" },
     { ime: "Weissmies", visina: "4023 m", skupina: "Peninske Alpe" }
   ];
+  const porazdelitev: { Country: string, two: string, two_and_half: string, three: string, three_and_half: string, four: string, total: string }[] = [
+    { Country: "Avstrija(AT)", two: "206", two_and_half: "150", three: "93", three_and_half: "14", four: "0", total: "463" },
+    { Country: "Francija(FR)", two: "71", two_and_half: "95", three: "75", three_and_half: "40", four: "4", total: "285" },
+    { Country: "Nemčija(DE)", two: "14", two_and_half: "11", three: "0", three_and_half: "0", four: "0", total: "25" },
+    { Country: "Italija(IT)", two: "149", two_and_half: "197", three: "169", three_and_half: "48", four: "7", total: "570" },
+    { Country: "Liechtenstein(LI)", two: "4", two_and_half: "1", three: "0", three_and_half: "0", four: "0", total: "5" },
+    { Country: "Slovenija(SI)", two: "22", two_and_half: "9", three: "0", three_and_half: "0", four: "0", total: "31" },
+    { Country: "Švica(CH)", two: "66", two_and_half: "114", three: "147", three_and_half: "44", four: "24", total: "395" },
+    { Country: "Alpe skupaj", two: "507", two_and_half: "530", three: "416", three_and_half: "117", four: "29", total: "1599" }
+  ];
 
   return (
     <>
@@ -213,7 +223,8 @@ const Home: NextPage = () => {
                   { title: "8	Planšarstvo" },
                   { title: "9	Etimologija" },
                   { title: "10 Viri" },
-                  { title: "11 Glej tudi" }
+                  { title: "11 Glej tudi" },
+                  { title: "12 Zunanje povezave" }
                 ]}
               />
             </Karta>
@@ -275,11 +286,60 @@ const Home: NextPage = () => {
                 height="214"
               />
             </Karta>
-            <Seznam seznam={[{ title: "" }, { title: "" }, { title: "" }]} />
+            Jugozahodne Alpe
+            <Seznam noLink seznam={[
+              { title: "1. Ligurske Alpe (Punta Marguareis, 2661 m)" },
+              { title: "2. Primôrske Alpe (Monte Argentera, 3297 m), včasih tudi Maritimske Alpe" },
+              { title: "3. Provansalske Alpe in Predalpe (Tete de l'Estrop, 2961 m)" },
+              { title: "4. Kotijske Alpe (Monviso, 3841 m)" },
+              { title: "5. Dofinejske Alpe (Barre des Écrins, 4102 m), včasih tudi Dauphinske Alpe" },
+              { title: "6. Dofinejske Predalpe (Grande Tete de l'Obiou, 2790 m)" },
+            ]} />
+            Severozahodne Alpe
+            <Seznam noLink seznam={[
+              { title: "7. Savojske Alpe (Mont Blanc, 4810 m), včasih tudi Grajiške Alpe" },
+              { title: "8. Savojske Predalpe (Haute Cime des Dents du Midi, 3257 m)" },
+              { title: "9. Peninske Alpe (Monte Rosa, 4634 m)" },
+              { title: "10. Lepontinske Alpe (Monte Leone, 3552 m)" },
+              { title: "11. Luganske Predalpe (Pizzo di Gino, 2245 m)" },
+              { title: "12. Bernske Alpe v širšem smislu (Finsteraarhorn, 4274 m)" },
+              { title: "13. Glarnske Alpe v širšem smislu (Tödi, 3620 m)" },
+              { title: "14. Švicarske Predalpe (Schilthorn, 2970 m)" },]} />
           </Poglavje>
 
-          <Poglavje naslov="Vzhodne Alpe"></Poglavje>
-
+          <Poglavje naslov="Vzhodne Alpe">
+            Osrednje vzhodne Alpe
+            <Seznam noLink seznam={[
+              { title: "15. Zahodne Retijske Alpe (Piz Bernina, 4049 m)" },
+              { title: "16. Vzhodne Retijske Alpe (Wildspitze, 3772 m)" },
+              { title: "17. Zahodne Ture, tudi Visoke Ture (Großglockner, 3798 m)" },
+              { title: "18. Vzhodne Ture, tudi Nizke Ture (Hochgolling, 2863 m)" },
+              { title: "19. Koroško-Štajerske Alpe (Eisenhut, 2441 m), kamor sodijo Krške Alpe" },
+              { title: "20. Štajerske Predalpe (Ameringkogel, 2184 m), vključuje tudi Kobansko s Košenjakom" },
+            ]} />
+            Severne vzhodne Alpe
+            <Seznam noLink seznam={[
+              { title: "21. Severne Tirolske apneniške Alpe (Parseierspitze, 3040 m)" },
+              { title: "22. Bavarske Alpe (Großer Krottenkopf, 2657 m)" },
+              { title: "23. Tirolske skrilaste Alpe (Lizumer Reckner, 2884 m)" },
+              { title: "24. Salzburške Alpe (Hochkönig, 2941 m)" },
+              { title: "25. Salzkammergut in Zgornjeavstrijske Alpe (Hoher Dachstein, 2993 m)" },
+              { title: "26. Severne Štajerske Alpe (Hochtor, 2369 m)" },
+              { title: "27. Severne Spodnjeavstrijske Alpe (Hochstadl, 1919 m)" },
+            ]} />
+            Južne vzhodne Alpe
+            <Seznam noLink seznam={[
+              { title: "28. Južne Retijske Alpe (Ortler, 3905 m)" },
+              { title: "29. Bergamske Alpe in Predalpe (Pizzo di Coca, 3052 m)" },
+              { title: "30. Predalpe nad Brescio in Gardo (Monte Cadria, 2254 m)" },
+              { title: "31. Dolomiti (Marmolada, 3342 m)" },
+              { title: "32. Beneške Predalpe (Col Nudo, 2472 m)" },
+              { title: "33. Karnijske in Ziljske Alpe (Monte Coglians, 2780 m)" },
+              { title: "34. Julijske Alpe v širšem smislu (Triglav, 2864 m), se delijo naprej na Julijske Alpe in Julijske Predalpe" },
+              { title: "35. Koroško-Slovenske Alpe (Grintovec, 2558 m), se delijo naprej na Karavanke in Kamniško-Savinjske Alpe" },
+              { title: "36. Slovenske Predalpe (Porezen, 1630 m), se delijo naprej na Zahodne Slovenske Predalpe (Škofjeloško-Cerkljansko, Polhograjsko in Rovtarsko hribovje), Vzhodne Slovenske Predalpe (Posavsko hribovje) in Severovzhodne Slovenske Predalpe (Pohorje in Paški Kozjak)." },
+            ]} />
+          </Poglavje>
           <Poglavje naslov="Najvišji vrhovi Alp - štiritisočaki">
             <Karta poravnava="right">
               <Slika
@@ -313,6 +373,34 @@ const Home: NextPage = () => {
             </TableContainer>
           </Poglavje>
           <Poglavje naslov="Porazdelitev alpskih vrhov z nadmorsko višino 2.000 m ali več po državah">
+            <TableContainer>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Country</TableCell>
+                    <TableCell>2000+</TableCell>
+                    <TableCell>2500+</TableCell>
+                    <TableCell>3000+</TableCell>
+                    <TableCell>3500+</TableCell>
+                    <TableCell>4000+</TableCell>
+                    <TableCell>Total</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {porazdelitev.map((row) => (
+                    <TableRow key={row.Country}>
+                      <TableCell>{row.Country}</TableCell>
+                      <TableCell>{row.two}</TableCell>
+                      <TableCell>{row.two_and_half}</TableCell>
+                      <TableCell>{row.three}</TableCell>
+                      <TableCell>{row.three_and_half}</TableCell>
+                      <TableCell>{row.four}</TableCell>
+                      <TableCell>{row.total}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
             175 izmed teh vrhov je na meddržavnih mejah.
           </Poglavje>
         </Poglavje>
@@ -720,7 +808,66 @@ const Home: NextPage = () => {
             </li>
           </ul>
         </Poglavje>
-        <Poglavje naslov="Viri"></Poglavje>
+        <Poglavje naslov="Viri">
+          <Seznam noLink seznam={[
+            { title: "\"Le Mont-Blanc passe de 4.810 mètres à 4.808,7 mètres\"." },
+            { title: "Comitato Geografico Nazionale Italiano (Hrsg.): Nomi e limiti delle grandi parti del Sistema alpino. In L'Universo. Anno Vili, n. 9, Firenze, 1926." },
+            { title: "Planinski vestnik, maj 2006, str. 80-81 Pridobljeno 18. januar 2014." },
+            { title: "Delitev po SAC" },
+            { title: "Franz Graßler: Alpenvereinseinteilung der Ostalpen (AVE). Alpenvereins-Jahrbuch. In: DAV, OeAV, AVS (Hrsg.): Berg '84. Band 108, 1984, S. 215–224." },
+            { title: "Marazzi, Sergio (2012). SOIUSA - Suddivisione orografica internazionale unificata del Sistema Alpino , www.fioridimontagna.it, Pridobljeno 18. januar 2014." },
+            { title: "Graciansky (2011), 1-2" },
+            { title: "Gerrard, (1990), 16" },
+            { title: "Shoumatoff (2001), 49–53" },
+            { title: "Roth, 10–17" },
+            { title: "Shoumatoff (2001), 63–68" },
+            { title: "Gerrard, (1990), 132" },
+            { title: "Triglavski ledenik" },
+            { title: "Ledenik pod Skuto" },
+            { title: "Chatré, Baptiste, et al. (2010), 5" },
+            { title: "Chatré, Baptiste, et al. (2010), 9" },
+            { title: "Benniston et al. (2011), 1" },
+            { title: "Price, Martin. Mountains: Globally Important Eco-systems\".University of Oxford" },
+            { title: "Chatré, Baptiste, et al. (2010), 8" },
+            { title: "Reynolds, (2012), 43–45" },
+            { title: "Shoumatoff (2001), 75" },
+            { title: "Beattie (2006), 17" },
+            { title: "Kala, C.P. and Ratajc, P. 2012.\"High altitude biodiversity of the Alps and the Himalayas: ethnobotany, plant distribution and conservation perspective\".Biodiversity and Conservation, 21(4): 1115–1126." },
+            { title: "Shoumatoff (2001), 90, 96, 101" },
+            { title: "Shoumatoff (2001), 104" },
+            { title: "Shoumatoff (2001), 102–103" },
+            { title: "Shoumatoff (2001), 97–98" },
+          ]} />
+
+          <Seznam noLink seznam={[
+            { title: "Shoumatoff (2001), 91" },
+            { title: "Beattie, (2006), 25" },
+            { title: "Luca Ermini et al., \"Complete Mitochondrial Genome Sequence of the Tyrolean Iceman,\" Current Biology, vol. 18, no. 21(30 October 2008), pp. 1687–1693." },
+            { title: "Beattie, (2006), 25" },
+            { title: "Fleming (2000), 2" },
+            { title: "Shoumatoff (2001), 131" },
+            { title: "Lancel, Serge, (1999), 71" },
+            { title: "Prevas (2001), 68–69" },
+            { title: "Beattie, (2006), 27" },
+            { title: "Beattie, (2006), 31, 34" },
+            { title: "Beattie, (2006)" },
+            { title: "Shoumatoff (2001), 182–183" },
+            { title: "Fleming (2000)" },
+            { title: "\"Mont Aiguille\". Peakware, the World Mountain Encyclopaedia. Pridobljeno dne 2 January 2013." },
+            { title: "\"L'ascension historique de 1492\" [The historic ascent of 1492] (francoščina). Mont-Aiguille.com. 2009-01-12. Arhivirano iz prvotnega spletišča dne 2009-06-16. Pridobljeno dne 3 January 2013." },
+            { title: "Con Rotario sul Rocciamelone" },
+            { title: "L'alpinismo? E nato sul Rocciamelone (La Stampa, 30 julij 2008)" },
+            { title: "Priložnostna znamka" },
+            { title: "History Channel - na današnji dan, 13. december, 1916" },
+            { title: "Mitchell (2007), 7–10" },
+            { title: "Mitchell (2007), 10, 151" },
+            { title: "Barker, Graeme (1985). Prehistoric Farming in Europe. Cambridge: Cambridge University Press. str. 120. ISBN 0-521-22810-7." },
+            { title: "Barker 115" },
+            { title: "Švicarski zgodovinski leksikon" },
+            { title: "Švicarski zgodovinski leksikon" },
+            { title: "http://www.etymonline.com/index.php?allowed_in_frame=0&search=alps&searchmode=none Online etymology dictionary" },
+          ]} />
+        </Poglavje>
         <Poglavje naslov="Glej tudi">
           <ul>
             <li>

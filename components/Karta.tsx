@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import React from "react";
 
 type KartaProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   poravnava: "left" | "none" | "right";
 };
 

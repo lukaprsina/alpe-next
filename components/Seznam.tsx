@@ -8,10 +8,11 @@ type SeznamProps = {
     name: string;
     children?: SeznamProps;
     pad?: number;
+    noLink?: boolean;
   }[];
 };
 
-const Seznam = ({ seznam }: SeznamProps) => {
+const Seznam = ({ seznam, noLink = false }: SeznamProps) => {
   const router = useRouter();
 
   const handleClick = (title: string) => {
@@ -39,7 +40,7 @@ const Seznam = ({ seznam }: SeznamProps) => {
         return (
           <>
             <ListItemButton
-              onClick={() => handleClick(item.title)}
+              onClick={() => !noLink ? handleClick(item.title) : null}
               dense
               sx={{ pl: item.pad }}
             >
