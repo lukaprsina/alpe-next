@@ -35,7 +35,7 @@ const Poglavje = ({ children, naslov, level = 0 }: PoglavjeProps) => {
   let name = naslov?.split(" ").join("_");
 
   return (
-    <Box sx={{ padding: "10px" }} id={name}>
+    <Box sx={{ padding: "10px" }} id={name ? encodeURIComponent(name) : ""}>
       <br />
       {spremenjen_naslov}
       <Typography>{children_with_props}</Typography>

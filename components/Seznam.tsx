@@ -1,6 +1,6 @@
 import { List, ListItemButton, ListItemText } from "@mui/material";
 import React from "react";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 type SeznamProps = {
   seznam: {
@@ -12,9 +12,14 @@ type SeznamProps = {
 };
 
 const Seznam = ({ seznam }: SeznamProps) => {
+  const router = useRouter();
+
   const handleClick = (title: string) => {
-    // TODO
-    let name = title.split("\t")[1];
+    title.replace(/\s\s+/g, " ");
+    let test = title.split("\t").join(" ");
+    let name = test.split(" ");
+    let id = encodeURIComponent(name.splice(1).join("_"));
+    router.push("#" + id);
   };
 
   seznam.map((item) => {

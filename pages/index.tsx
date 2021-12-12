@@ -244,6 +244,14 @@ const Home: NextPage = () => {
 
           <Karta poravnava="right">
             <Slika
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Aletschgletscher_mit_Pinus_cembra1.jpg/300px-Aletschgletscher_mit_Pinus_cembra1.jpg"
+              podnapis="Ledenik Aletsch v Bernskih Alpah, Švica."
+              width="302"
+              height="227"
+            />
+          </Karta>
+          <Karta poravnava="right">
+            <Slika
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/SOIUSA-sezioni.png/450px-SOIUSA-sezioni.png"
               podnapis="Razdelitev Alp na 5 velikih sektorjev (različne barve) in 36 sekcij (SOIUSA)."
               width="302"
@@ -267,6 +275,7 @@ const Home: NextPage = () => {
                 height="214"
               />
             </Karta>
+            <Seznam seznam={[{ title: "" }, { title: "" }, { title: "" }]} />
           </Poglavje>
 
           <Poglavje naslov="Vzhodne Alpe"></Poglavje>
@@ -310,7 +319,7 @@ const Home: NextPage = () => {
         <Poglavje naslov="Geologija">
           <Karta poravnava="left">
             <Slika
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Franz%C3%B6sisch-Italienische_Alpengliederung_1924.svg/450px-Franz%C3%B6sisch-Italienische_Alpengliederung_1924.svg.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Alps_geology_map_en.jpg/300px-Alps_geology_map_en.jpg"
               podnapis="Geološka karta Alp."
               width="302"
               height="146"

@@ -15,7 +15,8 @@ const Karta = ({ children, poravnava }: KartaProps) => {
           clear: poravnava,
           backgroundColor: "#f9f9f9",
           margin: "10px",
-          padding: "10px"
+          padding: "10px",
+          display: "border-box"
         }}
       >
         {children}
